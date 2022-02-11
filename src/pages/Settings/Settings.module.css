@@ -1,3 +1,8 @@
+.spinner {
+    margin-top: 50px;
+    text-align: center;
+}
+
 .title {
     margin-top: 1rem;
     text-align: center;
@@ -10,4 +15,3 @@
 .radio {
     padding: 4px 0;
 }
-

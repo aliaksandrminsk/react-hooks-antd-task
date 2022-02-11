@@ -6,7 +6,7 @@ interface ICartContext {
   defaultCurrency: string;
   isSettingsJsonLoaded: boolean;
   setDefaultCurrency: (defaultCurrency: string) => void;
-  getAllRates: () => any;
+  getAllRates: () => Promise<Record<string, number>>;
   getRate: (
     currentAmount: number,
     currentCurrency: string,

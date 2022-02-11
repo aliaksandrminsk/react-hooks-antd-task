@@ -5,7 +5,7 @@ import {
   SettingOutlined,
   GoldOutlined,
 } from "@ant-design/icons";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export const MenuBar: React.FC = () => {
   const location = useLocation();
@@ -18,13 +18,13 @@ export const MenuBar: React.FC = () => {
       selectedKeys={[location.pathname]}
     >
       <Menu.Item key="/converter" icon={<GoldOutlined />}>
-        <NavLink to="/converter">Сonverter</NavLink>
+        <Link to="/converter">Сonverter</Link>
       </Menu.Item>
       <Menu.Item key="/rates" icon={<AppstoreOutlined />}>
-        <NavLink to="/rates">All rates</NavLink>
+        <Link to="/rates">All rates</Link>
       </Menu.Item>
       <Menu.Item key="/settings" icon={<SettingOutlined />}>
-        <NavLink to="/settings">Settings</NavLink>
+        <Link to="/settings">Settings</Link>
       </Menu.Item>
     </Menu>
   );

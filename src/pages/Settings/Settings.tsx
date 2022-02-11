@@ -16,7 +16,7 @@ export const Settings = () => {
   const { Title } = Typography;
 
   if (!isSettingsJsonLoaded) {
-    return <CustomSpinner />;
+    return  <div className={classes.spinner}> <CustomSpinner /></div>;
   } else {
     return (
       <>

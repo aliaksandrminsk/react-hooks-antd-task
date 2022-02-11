@@ -86,7 +86,7 @@ export const Rates = () => {
   ];
 
   if (!isSettingsJsonLoaded) {
-    return <CustomSpinner />;
+    return <div className={classes.spinner}>  <CustomSpinner /> </div>;
   } else if (error) {
     return <div>{error}</div>;
   } else {
@@ -97,7 +97,7 @@ export const Rates = () => {
         </div>
         <Divider />
         <Row gutter={20}>
-          <Col xs={24} md={{ span: 12, offset: 6 }}>
+          <Col xs={24} md={{ span: 16, offset: 4 }}>
             <Table
               dataSource={dataSource}
               columns={columns}

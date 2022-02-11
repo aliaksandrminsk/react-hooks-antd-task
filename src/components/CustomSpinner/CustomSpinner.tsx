@@ -1,10 +1,10 @@
 import { Spin } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
 import React from "react";
+import classes from "./CustomSpinner.module.css";
 
-const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
+const antIcon = <LoadingOutlined className={classes.icon} spin />;
 
-// Return value should be component
-const CustomSpinner = () => <Spin indicator={antIcon} />;
+const CustomSpinner = () => <Spin indicator={antIcon}/>
 
 export default CustomSpinner;

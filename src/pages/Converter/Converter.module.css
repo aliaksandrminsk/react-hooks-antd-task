@@ -1,3 +1,8 @@
+.spinner {
+    margin-top: 50px;
+    text-align: center;
+}
+
 .title {
     margin-top: 1rem;
     text-align: center;
@@ -6,4 +11,3 @@
 .content {
     text-align: center;
 }
-

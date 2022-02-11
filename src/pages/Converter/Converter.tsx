@@ -41,7 +41,7 @@ export const Converter = () => {
   }, [fromValue, toCurrency, fromCurrency]);
 
   if (!isSettingsJsonLoaded) {
-    return <CustomSpinner />;
+    return <div className={classes.spinner}> <CustomSpinner /></div>;
   } else {
     return (
       <>

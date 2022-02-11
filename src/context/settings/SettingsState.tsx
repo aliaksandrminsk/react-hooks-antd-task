@@ -1,11 +1,9 @@
 import axios from "axios";
-
 import React, { useEffect, useReducer } from "react";
 import { ActionType } from "../types";
 import { ICurrency } from "./interfaces/ICurrency";
 import { ISettingsState, settingsReducer } from "./settingsReducer";
 import { SettingsContext } from "./settingsContext";
-import { IRate } from "./interfaces/IRate";
 
 export const SettingsState: React.FC = ({ children }) => {
   const initialState: ISettingsState = {
@@ -37,7 +35,7 @@ export const SettingsState: React.FC = ({ children }) => {
   };
 
   const getAllRates = async () => {
-    const toCurrencies: string[] = [];
+    const toCurrencies = [];
     for (const currency of currencies) {
       toCurrencies.push(currency.symbol);
     }
@@ -53,13 +51,9 @@ export const SettingsState: React.FC = ({ children }) => {
           process.env.REACT_APP_API_KEY
       )
       .then((response) => {
-        const rates: any = {};
+        const rates: Record<string, number> = {};
         for (const [key, value] of Object.entries(response.data.results)) {
           rates[key] = value as number;
-          // rates.push({
-          //   currency: key,
-          //   rate: value as number,
-          // });
         }
         return rates;
       });
