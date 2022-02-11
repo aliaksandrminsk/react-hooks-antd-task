@@ -69,7 +69,7 @@ export const Rates = () => {
       dataIndex: "symbol",
       key: "symbol",
       render: (text: string) => (
-        <Typography.Text copyable>{text}</Typography.Text>
+        <Typography.Text copyable={{ tooltips: false }}>{text}</Typography.Text>
       ),
     },
     {

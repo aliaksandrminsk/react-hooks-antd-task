@@ -15,6 +15,7 @@ export const Converter = () => {
   const [fromCurrency, setFromCurrency] = useState<string>();
   const [toValue, setToValue] = useState<number>(1);
   const [toCurrency, setToCurrency] = useState<string>();
+  const [error, setError] = useState<string>("");
 
   useEffect(() => {
     function getSecondCurrency(firstCurrency: string) {
@@ -34,9 +35,16 @@ export const Converter = () => {
 
   useEffect(() => {
     if (isSettingsJsonLoaded && toCurrency && fromCurrency) {
-      getRate(fromValue, fromCurrency, toCurrency).then((data) => {
-        if (data != null) setToValue(data);
-      });
+      getRate(fromValue, fromCurrency, toCurrency)
+        .then((data) => {
+          if (data != null) setToValue(data);
+        })
+        .catch(function (error: string) {
+          setError(
+            "There was a problem getting data from currency service. Probably you should update API Key."
+          );
+          console.error(error);
+        });
     }
   }, [isSettingsJsonLoaded, getRate, fromValue, toCurrency, fromCurrency]);
 
@@ -46,6 +54,8 @@ export const Converter = () => {
         <CustomSpinner />
       </div>
     );
+  } else if (error) {
+    return <div className={classes.error}>{error}</div>;
   } else {
     return (
       <>

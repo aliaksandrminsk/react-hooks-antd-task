@@ -20,3 +20,9 @@
 .select {
     width: 80px;
 }
+
+.error {
+    color: red;
+    margin-top: 40px;
+    text-align: center;
+}
