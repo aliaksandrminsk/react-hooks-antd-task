@@ -1,4 +1,4 @@
-# React-Hooks-Sass Example
+# React-Hooks-Antd Example
 
 This project is a currency converter. It shows how to use React Hooks along with [TypeScript](https://www.typescriptlang.org/) language.
 Ant Design is used for building user interface. 
@@ -13,5 +13,5 @@ npm run start
 Probably you need to update API Key of currrency service (fastforex.io). It becomes out of date soon. API Key is stored in .env file.
 ```
 
-[React-Hooks-Sass Example
-](https://react-hooks-sass-task.web.app/)
+[React-Hooks-Antd Example
+](https://react-hooks-antd-task.web.app/)
