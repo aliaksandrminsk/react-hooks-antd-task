@@ -10,7 +10,7 @@ git clone https://github.com/aliaksandrminsk/react-hooks-antd-task.git
 cd react-hooks-antd-task
 npm install
 npm run start
-Probably you need to update free API Key of currrency service (fastforex.io). It becomes out of date soon. API Key is stored in .env file.
+Probably you need to update free API Key of currrency service in fastforex.io because it becomes out of date soon. API Key is stored in .env file.
 ```
 
 [React-Hooks-Antd Example
