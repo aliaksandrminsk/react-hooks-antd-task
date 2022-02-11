@@ -1,4 +1,6 @@
 export interface ICurrency {
-  id: string;
+  symbol: string;
   name: string;
+  icon: string;
+  state: string;
 }

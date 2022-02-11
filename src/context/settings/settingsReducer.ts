@@ -1,32 +1,46 @@
 import { ActionType } from "../types";
 import { ICurrency } from "./interfaces/ICurrency";
 
-export interface ISettings {
+export interface ISettingsState {
   currencies: Array<ICurrency>;
   defaultCurrency: string;
   isSettingsJsonLoaded: boolean;
 }
 
-type UpdateCartAction = {
-  type: ActionType.UPDATE_CART_ITEMS;
-  cartItems: Array<ICartItem>;
+type SetSettingsAction = {
+  type: ActionType.SET_SETTINGS;
+  currencies: Array<ICurrency>;
+  defaultCurrency: string;
 };
+
+type SetDefaultCurrencyAction = {
+  type: ActionType.SET_DEFAULT_CURRENCY;
+  defaultCurrency: string;
+};
+
+type Action = SetSettingsAction | SetDefaultCurrencyAction;
 
 const handlers = {
-  [ActionType.UPDATE_CART_ITEMS]: (
-    state: ICartState,
-    action: UpdateCartAction
-  ) => ({
+  [ActionType.SET_SETTINGS]: (state: ISettingsState, action: Action) => ({
     ...state,
-    cartItems: action.cartItems,
+    currencies: (action as SetSettingsAction).currencies,
+    defaultCurrency: (action as SetSettingsAction).defaultCurrency,
+    isSettingsJsonLoaded: true,
   }),
-  DEFAULT: (state: ICartState) => state,
+  [ActionType.SET_DEFAULT_CURRENCY]: (
+    state: ISettingsState,
+    action: Action
+  ): ISettingsState => ({
+    ...state,
+    defaultCurrency: (action as SetDefaultCurrencyAction).defaultCurrency,
+  }),
+  DEFAULT: (state: ISettingsState) => state,
 };
 
-export const cartReducer = (
-  state: ICartState,
-  action: UpdateCartAction
-): ICartState => {
+export const settingsReducer = (
+  state: ISettingsState,
+  action: Action
+): ISettingsState => {
   const handler = handlers[action.type] || handlers.DEFAULT;
   return handler(state, action);
 };

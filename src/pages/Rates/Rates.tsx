@@ -1,12 +1,8 @@
-import React, { Fragment, useContext, useEffect, useState } from "react";
-import { SettingsContext } from "../context/settings/settingsContext";
-import { Radio } from "antd";
-import { LoadingOutlined } from "@ant-design/icons";
-import { Typography } from "antd";
-import CustomSpinner from "../components/spinners/CustomSpinner";
-import { Row, Col, Divider, Image } from "antd";
-import { Table, Tag, Space } from "antd";
-import { ICurrency } from "../context/settings/interfaces/ICurrency";
+import React, { useContext, useEffect, useState } from "react";
+import { SettingsContext } from "../../context/settings/settingsContext";
+import { Table, Row, Col, Divider, Image, Typography } from "antd";
+import CustomSpinner from "../../components/CustomSpinner/CustomSpinner";
+import { ICurrency } from "../../context/settings/interfaces/ICurrency";
 import classes from "./Rates.module.css";
 
 interface ITableItem extends ICurrency {
@@ -15,7 +11,7 @@ interface ITableItem extends ICurrency {
 }
 
 export const Rates = () => {
-  const { Title, Paragraph } = Typography;
+  const { Title } = Typography;
 
   const { currencies, getAllRates, defaultCurrency, isSettingsJsonLoaded } =
     useContext(SettingsContext);

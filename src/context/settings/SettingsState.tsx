@@ -1,58 +1,117 @@
+import axios from "axios";
+
 import React, { useEffect, useReducer } from "react";
 import { ActionType } from "../types";
-import { CartContext } from "./cartContext";
-import { cartReducer, ISettings } from "./cartReducer";
 import { ICurrency } from "./interfaces/ICurrency";
+import { ISettingsState, settingsReducer } from "./settingsReducer";
+import { SettingsContext } from "./settingsContext";
+import { IRate } from "./interfaces/IRate";
 
-export const CartState: React.FC = ({ children }) => {
-  const initialState: ISettings = {
+export const SettingsState: React.FC = ({ children }) => {
+  const initialState: ISettingsState = {
     currencies: new Array<ICurrency>(),
     defaultCurrency: "",
-    isSettingsJsonLoaded: false;
+    isSettingsJsonLoaded: false,
   };
 
-  const [state, dispatch] = useReducer(cartReducer, initialState);
+  const [state, dispatch] = useReducer(settingsReducer, initialState);
 
-  const getSettings = () => {
-    const response = await axios.get("/currencies.json");
-    const currencies = response.data.currencies;
-    const defaultCurrency = response.data.defaultCurrency;
+  const initSettings = () => {
+    axios.get("currencies.json").then((response) => {
+      const currencies = response.data.currencies;
+      const defaultCurrency = response.data.defaultCurrency;
 
-    dispatch({
-      type: ActionType.SET_SETTINGS,
-      currencies,
-      defaultCurrency,
+      dispatch({
+        type: ActionType.SET_SETTINGS,
+        currencies,
+        defaultCurrency,
+      });
     });
   };
 
   const setDefaultCurrency = (defaultCurrency: string) => {
     dispatch({
-      type: ActionType.SET_SETTINGS,
+      type: ActionType.SET_DEFAULT_CURRENCY,
       defaultCurrency,
     });
   };
 
-  const getAllRates = () => {
+  const getAllRates = async () => {
+    const toCurrencies: string[] = [];
+    for (const currency of currencies) {
+      toCurrencies.push(currency.symbol);
+    }
+
+    return await axios
+      .get(
+        process.env.REACT_APP_AXIOS_BASE_URL +
+          "/fetch-multi?from=" +
+          defaultCurrency +
+          "&to=" +
+          toCurrencies.join(",") +
+          "&api_key=" +
+          process.env.REACT_APP_API_KEY
+      )
+      .then((response) => {
+        const rates: any = {};
+        for (const [key, value] of Object.entries(response.data.results)) {
+          rates[key] = value as number;
+          // rates.push({
+          //   currency: key,
+          //   rate: value as number,
+          // });
+        }
+        return rates;
+      });
   };
 
-  const getRate = (currencyAmount: number, currencyAmount) => {
+  const getRate = async (
+    currentAmount: number,
+    currentCurrency: string,
+    toCurrency: string
+  ) => {
+    return await axios
+      .get(
+        process.env.REACT_APP_AXIOS_BASE_URL +
+          "/convert?from=" +
+          currentCurrency +
+          "&to=" +
+          toCurrency +
+          "&amount=" +
+          currentAmount +
+          "&api_key=" +
+          process.env.REACT_APP_API_KEY
+      )
+      .then((response) => {
+        for (const [key, value] of Object.entries<number>(
+          response.data.result
+        )) {
+          if (key === toCurrency) {
+            return value;
+          }
+        }
+        return 0;
+      });
   };
 
+  useEffect(() => {
+    initSettings();
+  }, []);
 
-  const { cartItems } = state;
+  const { currencies, defaultCurrency, isSettingsJsonLoaded } = state;
 
   return (
-    <CartContext.Provider
+    <SettingsContext.Provider
       value={{
-        cartItems,
-        addCartItem,
-        updateCartItemCount,
-        removeCartItems,
-        isAddedProduct,
-        getSelectedItems,
+        currencies,
+        defaultCurrency,
+        isSettingsJsonLoaded,
+        setDefaultCurrency,
+        getAllRates,
+        getRate,
       }}
     >
       {children}
-    </CartContext.Provider>
+    </SettingsContext.Provider>
   );
 };

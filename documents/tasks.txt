@@ -1,0 +1,13 @@
+Currency service: https://freecurrencyapi.net
+https://console.fastforex.io/#
+
+Task: https://github.com/appbooster/test-assignments/blob/master/tasks/frontend.md
+1) MobX
+2) test units
+3) gulp
+4) ANt design
+5) less и памеяць стыли. https://www.youtube.com/watch?v=YkPT0Wb8ikU Импарцираваць стыли  ANt design у фармаце лесс.
+6) unit test
+7) сарцирощка у таблицы і магчыма дабавіць фільтр для новых палей(33.45). час 16:23
+8) <React.StrictMode>
+

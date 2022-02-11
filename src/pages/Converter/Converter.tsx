@@ -1,10 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
-import { SettingsContext } from "../context/settings/settingsContext";
-import { Input, Select, Space } from "antd";
-import { SettingsState } from "../context/settings/SettingsState";
-import { LoadingOutlined } from "@ant-design/icons";
+import { SettingsContext } from "../../context/settings/settingsContext";
+import { Col, Input, Row, Select, Space, Table } from "antd";
 import { Typography, Divider } from "antd";
-import CustomSpinner from "../components/spinners/CustomSpinner";
+import CustomSpinner from "../../components/CustomSpinner/CustomSpinner";
+import classes from "./Converter.module.css";
 
 export const Converter = () => {
   const { getRate, currencies, defaultCurrency, isSettingsJsonLoaded } =
@@ -43,45 +42,52 @@ export const Converter = () => {
 
   if (!isSettingsJsonLoaded) {
     return <CustomSpinner />;
+  } else {
+    return (
+      <>
+        <div className={classes.title}>
+          <Title level={4}>Currency Converter</Title>
+        </div>
+        <Divider />
+        <Row gutter={20}>
+          <Col xs={24} md={{ span: 12, offset: 6 }}>
+            <div className={classes.content}>
+              <Space>
+                <Input
+                  value={fromValue}
+                  onChange={(e) => setFromValue(+e.target.value)}
+                  style={{ width: "100px" }}
+                />
+                <Select
+                  className="select-after"
+                  onChange={setFromCurrency}
+                  value={fromCurrency}
+                  style={{ width: "80px" }}
+                >
+                  {currencies.map((item) => (
+                    <Option key={item.symbol} value={item.symbol}>
+                      {item.symbol}
+                    </Option>
+                  ))}
+                </Select>
+                = {toValue}
+                <Select
+                  className="select-after"
+                  onChange={setToCurrency}
+                  value={toCurrency}
+                  style={{ width: "80px" }}
+                >
+                  {currencies.map((item) => (
+                    <Option key={item.symbol} value={item.symbol}>
+                      {item.symbol}
+                    </Option>
+                  ))}
+                </Select>
+              </Space>
+            </div>
+          </Col>
+        </Row>
+      </>
+    );
   }
-
-  return (
-    <div>
-      <Title level={4}>Convert</Title>
-      <Divider />
-
-      <Space>
-        <Input
-          value={fromValue}
-          onChange={(e) => setFromValue(+e.target.value)}
-          style={{ width: "100px" }}
-        />
-        <Select
-          className="select-after"
-          onChange={setFromCurrency}
-          value={fromCurrency}
-          style={{ width: "80px" }}
-        >
-          {currencies.map((item) => (
-            <Option key={item.symbol} value={item.symbol}>
-              {item.symbol}
-            </Option>
-          ))}
-        </Select>
-        = {toValue}
-        <Select
-          className="select-after"
-          onChange={setToCurrency}
-          value={toCurrency}
-          style={{ width: "80px" }}
-        >
-          {currencies.map((item) => (
-            <Option key={item.symbol} value={item.symbol}>
-              {item.symbol}
-            </Option>
-          ))}
-        </Select>
-      </Space>
-    </div>
-  );
 };

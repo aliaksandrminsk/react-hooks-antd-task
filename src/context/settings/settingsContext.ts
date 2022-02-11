@@ -1,14 +1,17 @@
 import { createContext } from "react";
-import { ICartItem } from "./interfaces/ICartItem";
-import { IProduct } from "../product/interfaces/IProduct";
+import { ICurrency } from "./interfaces/ICurrency";
 
 interface ICartContext {
-  cartItems: Array<ICartItem>;
-  addCartItem: (product: IProduct) => void;
-  updateCartItemCount: (key: string, values: Partial<ICartItem>) => void;
-  removeCartItems: (keys: Set<string>) => void;
-  isAddedProduct: (key: string) => boolean;
-  getSelectedItems: () => Set<string>;
+  currencies: Array<ICurrency>;
+  defaultCurrency: string;
+  isSettingsJsonLoaded: boolean;
+  setDefaultCurrency: (defaultCurrency: string) => void;
+  getAllRates: () => any;
+  getRate: (
+    currentAmount: number,
+    currentCurrency: string,
+    toCurrency: string
+  ) => Promise<number>;
 }
 
-export const CartContext = createContext({} as ICartContext);
+export const SettingsContext = createContext({} as ICartContext);

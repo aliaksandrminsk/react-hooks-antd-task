@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c2caa053-b1f5-4ae2-81f1-202d5a5d989d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/documents/tasks.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Menu/MenuBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/axios/axios.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/axios/axios.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/context/settings/SettingsState.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/settings/SettingsState.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/context/settings/interfaces/ICurrency.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/settings/interfaces/ICurrency.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/context/settings/interfaces/IRate.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/settings/interfaces/IRate.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/context/settings/settingsContext.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/settings/settingsContext.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/context/settings/settingsReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/settings/settingsReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/context/types.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/types.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Converter/Converter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Converter/Converter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Rates/Rates.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Rates/Rates.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Settings/Settings.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Settings/Settings.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Settings/Settings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Settings/Settings.tsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="24pPuKwrn4EVvHdpCvAInqyslkt" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages/Converter" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\gadzi\AppData\Roaming\npm\node_modules\prettier" />
+    <property name="run.prettier.on.save" value="true" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
+    <property name="ts.external.directory.path" value="E:\WORK2021\Test tasks\react-hooks-antd-task\node_modules\typescript\lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\WORK2021\Test tasks\react-hooks-antd-task\src\pages\Converter" />
+      <recent name="E:\WORK2021\Test tasks\react-hooks-antd-task\src\pages\Settings" />
+      <recent name="E:\WORK2021\Test tasks\react-hooks-antd-task\src\components\Menu" />
+      <recent name="E:\WORK2021\Test tasks\react-hooks-antd-task\src" />
+      <recent name="E:\WORK2021\Test tasks\react-hooks-antd-task\src\pages" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\WORK2021\Test tasks\react-hooks-antd-task\src\pages\Converter" />
+      <recent name="E:\WORK2021\Test tasks\react-hooks-antd-task\src\pages\Settings" />
+      <recent name="E:\WORK2021\Test tasks\react-hooks-antd-task\src\pages\Rates" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c2caa053-b1f5-4ae2-81f1-202d5a5d989d" name="Default Changelist" comment="" />
+      <created>1644324775707</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1644324775707</updated>
+      <workItem from="1644324780252" duration="26000" />
+      <workItem from="1644324806262" duration="5456000" />
+      <workItem from="1644344938498" duration="970000" />
+      <workItem from="1644347226719" duration="3000" />
+      <workItem from="1644347245550" duration="3216000" />
+      <workItem from="1644371438836" duration="9000" />
+      <workItem from="1644371906596" duration="9908000" />
+      <workItem from="1644382086331" duration="9392000" />
+      <workItem from="1644394947671" duration="5137000" />
+      <workItem from="1644424419642" duration="995000" />
+      <workItem from="1644425506412" duration="5952000" />
+      <workItem from="1644431961697" duration="1606000" />
+      <workItem from="1644437773654" duration="5927000" />
+      <workItem from="1644458688226" duration="8066000" />
+      <workItem from="1644467280281" duration="178000" />
+      <workItem from="1644467577403" duration="666000" />
+      <workItem from="1644468257776" duration="25396000" />
+      <workItem from="1644505060627" duration="11913000" />
+      <workItem from="1644532439449" duration="5158000" />
+      <workItem from="1644539773869" duration="298000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="620" y="260" key="FileChooserDialogImpl" timestamp="1644466803266">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="620" y="260" key="FileChooserDialogImpl/0.0.1680.1010@0.0.1680.1010" timestamp="1644466803266" />
+    <state x="341" y="150" key="SettingsEditor" timestamp="1644328164794">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="341" y="150" key="SettingsEditor/0.0.1680.1010@0.0.1680.1010" timestamp="1644328164794" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/pages/Converter/Converter.tsx</url>
+          <line>51</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

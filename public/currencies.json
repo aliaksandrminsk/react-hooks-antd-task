@@ -1,0 +1,78 @@
+{
+  "defaultCurrency": "USD",
+  "currencies": [
+    {
+      "symbol": "USD",
+      "name": "United States dollar",
+      "icon": "23px-Flag_of_the_United_States.svg.png",
+      "state": "United States"
+    },
+    {
+      "symbol": "GBP",
+      "name": "British pound",
+      "icon": "23px-Flag_of_the_United_Kingdom.svg.png",
+      "state": "United Kingdom"
+    },
+    {
+      "symbol": "AUD",
+      "name": "Australian dollar",
+      "icon": "Flag_of_Australia_(converted).svg.png",
+      "state": "Australia"
+    },
+    {
+      "symbol": "ALL",
+      "name": "Albanian lek",
+      "icon": "21px-Flag_of_Albania.svg.png",
+      "state": "Albania"
+    },
+    {
+      "symbol": "BZD",
+      "name": "Belize dollar",
+      "icon": "Flag_of_Belize.svg.png",
+      "state": "Belize"
+    },
+    {
+      "symbol": "BWP",
+      "name": "Botswana pula",
+      "icon": "23px-Flag_of_Botswana.svg.png",
+      "state": "Botswana"
+    },
+    {
+      "symbol": "SGD",
+      "name": "Singapore dollar",
+      "icon": "Flag_of_Singapore.svg.png",
+      "state": "Singapore"
+    },
+    {
+      "symbol": "CAD",
+      "name": "Canadian dollar",
+      "icon": "23px-Flag_of_Canada_(Pantone).svg.png",
+      "state": "Canada"
+    },
+    {
+      "symbol": "CNY",
+      "name": "Chinese yuan",
+      "icon": "Flag_of_the_People's_Republic_of_China.svg.png",
+      "state": "China"
+    },
+    {
+      "symbol": "COP",
+      "name": "Colombian peso",
+      "icon": "Flag_of_Colombia.svg.png",
+      "state": "Colombia"
+    },
+    {
+      "symbol": "QAR",
+      "name": "Qatari riyal",
+      "icon": "Flag_of_Qatar.svg.png",
+      "state": "Qatar"
+    },
+    {
+      "symbol": "RON",
+      "name": "Romanian leu",
+      "icon": "23px-Flag_of_Romania.svg.png",
+      "state": "Romania"
+    }
+  ]
+}
+
