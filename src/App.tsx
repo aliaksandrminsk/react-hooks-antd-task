@@ -1,8 +1,6 @@
-import React, { useState } from "react";
-import { Button, Space, Divider, Row, Col, Table, Menu } from "antd";
+import React from "react";
+import { Row, Col } from "antd";
 import { Layout } from "antd";
-import classes from "./App.module.css";
-
 import { SettingsState } from "./context/settings/SettingsState";
 import { Settings } from "./pages/Settings/Settings";
 import { Rates } from "./pages/Rates/Rates";

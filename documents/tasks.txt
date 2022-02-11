@@ -10,4 +10,5 @@ Task: https://github.com/appbooster/test-assignments/blob/master/tasks/frontend.
 6) unit test
 7) сарцирощка у таблицы і магчыма дабавіць фільтр для новых палей(33.45). час 16:23
 8) <React.StrictMode>
+9) delete prettier from dep
 

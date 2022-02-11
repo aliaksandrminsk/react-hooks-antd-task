@@ -1,6 +1,6 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { SettingsContext } from "../../context/settings/settingsContext";
-import { Col, Divider, Radio, Row, Space, Table } from "antd";
+import { Col, Divider, Radio, Row } from "antd";
 import { Typography } from "antd";
 import CustomSpinner from "../../components/CustomSpinner/CustomSpinner";
 import classes from "./Settings.module.css";
@@ -16,7 +16,11 @@ export const Settings = () => {
   const { Title } = Typography;
 
   if (!isSettingsJsonLoaded) {
-    return  <div className={classes.spinner}> <CustomSpinner /></div>;
+    return (
+      <div className={classes.spinner}>
+        <CustomSpinner />
+      </div>
+    );
   } else {
     return (
       <>

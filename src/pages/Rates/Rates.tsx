@@ -21,15 +21,17 @@ export const Rates = () => {
   useEffect(() => {
     if (isSettingsJsonLoaded) {
       getAllRates()
-        .then((data: any) => {
+        .then((data: Record<string, number>) => {
           setRates(data);
         })
         .catch(function (error: string) {
-          setError(error);
+          setError(
+            "There was a problem getting data from currency service. Probably you should update API Key."
+          );
           console.error(error);
         });
     }
-  }, [isSettingsJsonLoaded]);
+  }, [isSettingsJsonLoaded, getAllRates]);
 
   const dataSource = [];
   for (const currency of currencies) {
@@ -86,9 +88,13 @@ export const Rates = () => {
   ];
 
   if (!isSettingsJsonLoaded) {
-    return <div className={classes.spinner}>  <CustomSpinner /> </div>;
+    return (
+      <div className={classes.spinner}>
+        <CustomSpinner />
+      </div>
+    );
   } else if (error) {
-    return <div>{error}</div>;
+    return <div className={classes.error}>{error}</div>;
   } else {
     return (
       <>
@@ -105,7 +111,6 @@ export const Rates = () => {
                 pageSize: 10,
               }}
             />
-            ;
           </Col>
         </Row>
       </>

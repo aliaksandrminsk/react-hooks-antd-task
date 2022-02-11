@@ -9,5 +9,14 @@
 }
 
 .content {
+    margin-top: 1rem;
     text-align: center;
+}
+
+.input {
+    width: 100px;
+}
+
+.select {
+    width: 80px;
 }

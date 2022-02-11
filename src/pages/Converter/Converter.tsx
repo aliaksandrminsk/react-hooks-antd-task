@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { SettingsContext } from "../../context/settings/settingsContext";
-import { Col, Input, Row, Select, Space, Table } from "antd";
+import { Col, InputNumber, Row, Select, Space } from "antd";
 import { Typography, Divider } from "antd";
 import CustomSpinner from "../../components/CustomSpinner/CustomSpinner";
 import classes from "./Converter.module.css";
@@ -16,32 +16,36 @@ export const Converter = () => {
   const [toValue, setToValue] = useState<number>(1);
   const [toCurrency, setToCurrency] = useState<string>();
 
-  const getSecondCurrency = (firstCurrency: string) => {
-    for (const currency of currencies) {
-      if (currency.symbol !== firstCurrency) {
-        return currency.symbol;
-      }
-    }
-    return firstCurrency;
-  };
-
   useEffect(() => {
+    function getSecondCurrency(firstCurrency: string) {
+      for (const currency of currencies) {
+        if (currency.symbol !== firstCurrency) {
+          return currency.symbol;
+        }
+      }
+      return firstCurrency;
+    }
+
     if (isSettingsJsonLoaded) {
       setFromCurrency(defaultCurrency);
       setToCurrency(getSecondCurrency(defaultCurrency));
     }
-  }, [isSettingsJsonLoaded]);
+  }, [isSettingsJsonLoaded, defaultCurrency, currencies]);
 
   useEffect(() => {
     if (isSettingsJsonLoaded && toCurrency && fromCurrency) {
-      getRate(fromValue, fromCurrency, toCurrency).then((data) =>
-        setToValue(data)
-      );
+      getRate(fromValue, fromCurrency, toCurrency).then((data) => {
+        if (data != null) setToValue(data);
+      });
     }
-  }, [fromValue, toCurrency, fromCurrency]);
+  }, [isSettingsJsonLoaded, getRate, fromValue, toCurrency, fromCurrency]);
 
   if (!isSettingsJsonLoaded) {
-    return <div className={classes.spinner}> <CustomSpinner /></div>;
+    return (
+      <div className={classes.spinner}>
+        <CustomSpinner />
+      </div>
+    );
   } else {
     return (
       <>
@@ -53,16 +57,16 @@ export const Converter = () => {
           <Col xs={24} md={{ span: 12, offset: 6 }}>
             <div className={classes.content}>
               <Space>
-                <Input
+                <InputNumber
                   value={fromValue}
-                  onChange={(e) => setFromValue(+e.target.value)}
-                  style={{ width: "100px" }}
+                  controls={false}
+                  onChange={setFromValue}
+                  className={classes.input}
                 />
                 <Select
-                  className="select-after"
+                  className={"select-after " + classes.select}
                   onChange={setFromCurrency}
                   value={fromCurrency}
-                  style={{ width: "80px" }}
                 >
                   {currencies.map((item) => (
                     <Option key={item.symbol} value={item.symbol}>
@@ -72,7 +76,7 @@ export const Converter = () => {
                 </Select>
                 = {toValue}
                 <Select
-                  className="select-after"
+                  className={"select-after " + classes.select}
                   onChange={setToCurrency}
                   value={toCurrency}
                   style={{ width: "80px" }}

@@ -84,7 +84,7 @@ export const SettingsState: React.FC = ({ children }) => {
             return value;
           }
         }
-        return 0;
+        return null;
       });
   };
 

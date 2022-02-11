@@ -11,7 +11,7 @@ interface ICartContext {
     currentAmount: number,
     currentCurrency: string,
     toCurrency: string
-  ) => Promise<number>;
+  ) => Promise<number|null>;
 }
 
 export const SettingsContext = createContext({} as ICartContext);
