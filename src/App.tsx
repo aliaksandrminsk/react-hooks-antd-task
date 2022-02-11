@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Menu } from "antd";
+import { Row, Col } from "antd";
 import { Layout } from "antd";
 import { SettingsState } from "./context/settings/SettingsState";
 import { Settings } from "./pages/Settings/Settings";
