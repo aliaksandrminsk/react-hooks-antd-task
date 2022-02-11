@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col } from "antd";
+import { Row, Col, Menu } from "antd";
 import { Layout } from "antd";
 import { SettingsState } from "./context/settings/SettingsState";
 import { Settings } from "./pages/Settings/Settings";
@@ -28,7 +28,7 @@ const App = () => {
             </Routes>
           </Content>
           <Footer>
-            <Row gutter={0}>
+            <Row gutter={0} style={{ float: "right" }}>
               <Col xs={24}>© 1995-2022 Company.com Inc.</Col>
             </Row>
           </Footer>
