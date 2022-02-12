@@ -87,13 +87,7 @@ export const Rates = () => {
     },
   ];
 
-  if (!isSettingsJsonLoaded) {
-    return (
-      <div className={classes.spinner}>
-        <CustomSpinner />
-      </div>
-    );
-  } else if (error) {
+  if (error) {
     return <div className={classes.error}>{error}</div>;
   } else {
     return (
@@ -102,17 +96,24 @@ export const Rates = () => {
           <Title level={4}>Rates</Title>
         </div>
         <Divider />
-        <Row gutter={20}>
-          <Col xs={24} md={{ span: 16, offset: 4 }}>
-            <Table
-              dataSource={dataSource}
-              columns={columns}
-              pagination={{
-                pageSize: 10,
-              }}
-            />
-          </Col>
-        </Row>
+
+        {!isSettingsJsonLoaded ? (
+          <div className={classes.spinner}>
+            <CustomSpinner />
+          </div>
+        ) : (
+          <Row gutter={20}>
+            <Col xs={24} md={{ span: 16, offset: 4 }}>
+              <Table
+                dataSource={dataSource}
+                columns={columns}
+                pagination={{
+                  pageSize: 10,
+                }}
+              />
+            </Col>
+          </Row>
+        )}
       </>
     );
   }

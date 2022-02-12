@@ -15,20 +15,18 @@ export const Settings = () => {
 
   const { Title } = Typography;
 
-  if (!isSettingsJsonLoaded) {
-    return (
-      <div className={classes.spinner}>
-        <CustomSpinner />
+  return (
+    <>
+      <div className={classes.title}>
+        <Title level={4}>Default Currency</Title>
       </div>
-    );
-  } else {
-    return (
-      <>
-        <div className={classes.title}>
-          <Title level={4}>Default Currency</Title>
-        </div>
-        <Divider />
+      <Divider />
 
+      {!isSettingsJsonLoaded ? (
+        <div className={classes.spinner}>
+          <CustomSpinner />
+        </div>
+      ) : (
         <Row gutter={20}>
           <Col xs={24} md={{ span: 12, offset: 6 }}>
             <div className={classes.content}>
@@ -47,7 +45,8 @@ export const Settings = () => {
             </div>
           </Col>
         </Row>
-      </>
-    );
-  }
+      )}
+    </>
+  );
+  //}
 };

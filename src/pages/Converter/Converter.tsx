@@ -48,13 +48,7 @@ export const Converter = () => {
     }
   }, [isSettingsJsonLoaded, getRate, fromValue, toCurrency, fromCurrency]);
 
-  if (!isSettingsJsonLoaded) {
-    return (
-      <div className={classes.spinner}>
-        <CustomSpinner />
-      </div>
-    );
-  } else if (error) {
+  if (error) {
     return <div className={classes.error}>{error}</div>;
   } else {
     return (
@@ -63,44 +57,51 @@ export const Converter = () => {
           <Title level={4}>Currency Converter</Title>
         </div>
         <Divider />
-        <Row gutter={20}>
-          <Col xs={24} md={{ span: 12, offset: 6 }}>
-            <div className={classes.content}>
-              <Space>
-                <InputNumber
-                  value={fromValue}
-                  controls={false}
-                  onChange={setFromValue}
-                  className={classes.input}
-                />
-                <Select
-                  className={"select-after " + classes.select}
-                  onChange={setFromCurrency}
-                  value={fromCurrency}
-                >
-                  {currencies.map((item) => (
-                    <Option key={item.symbol} value={item.symbol}>
-                      {item.symbol}
-                    </Option>
-                  ))}
-                </Select>
-                = {toValue}
-                <Select
-                  className={"select-after " + classes.select}
-                  onChange={setToCurrency}
-                  value={toCurrency}
-                  style={{ width: "80px" }}
-                >
-                  {currencies.map((item) => (
-                    <Option key={item.symbol} value={item.symbol}>
-                      {item.symbol}
-                    </Option>
-                  ))}
-                </Select>
-              </Space>
-            </div>
-          </Col>
-        </Row>
+
+        {!isSettingsJsonLoaded ? (
+          <div className={classes.spinner}>
+            <CustomSpinner />
+          </div>
+        ) : (
+          <Row gutter={20}>
+            <Col xs={24} md={{ span: 12, offset: 6 }}>
+              <div className={classes.content}>
+                <Space>
+                  <InputNumber
+                    value={fromValue}
+                    controls={false}
+                    onChange={setFromValue}
+                    className={classes.input}
+                  />
+                  <Select
+                    className={"select-after " + classes.select}
+                    onChange={setFromCurrency}
+                    value={fromCurrency}
+                  >
+                    {currencies.map((item) => (
+                      <Option key={item.symbol} value={item.symbol}>
+                        {item.symbol}
+                      </Option>
+                    ))}
+                  </Select>
+                  = {toValue}
+                  <Select
+                    className={"select-after " + classes.select}
+                    onChange={setToCurrency}
+                    value={toCurrency}
+                    style={{ width: "80px" }}
+                  >
+                    {currencies.map((item) => (
+                      <Option key={item.symbol} value={item.symbol}>
+                        {item.symbol}
+                      </Option>
+                    ))}
+                  </Select>
+                </Space>
+              </div>
+            </Col>
+          </Row>
+        )}
       </>
     );
   }

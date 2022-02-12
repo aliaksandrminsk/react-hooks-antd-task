@@ -2,4 +2,5 @@
 2) unit test
 3) delete prettier from dep
 4) кантроль нагрузки
+5) added library to readme for every tasks
 
