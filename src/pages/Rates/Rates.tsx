@@ -33,22 +33,24 @@ export const Rates = () => {
     }
   }, [isSettingsJsonLoaded, getAllRates]);
 
-  const dataSource = [];
-  for (const currency of currencies) {
-    let rateText = null;
-    if (rates != null && rates[currency.symbol])
-      rateText = `1 ${currency.symbol} = ${
-        Math.round((1 / rates[currency.symbol]) * 100) / 100
-      } ${defaultCurrency}`;
+  const dataSource: Array<ITableItem> = [];
+  if (currencies) {
+    for (const currency of currencies) {
+      let rateText = null;
+      if (rates != null && rates[currency.symbol])
+        rateText = `1 ${currency.symbol} = ${
+          Math.round((1 / rates[currency.symbol]) * 100) / 100
+        } ${defaultCurrency}`;
 
-    dataSource.push({
-      key: currency.symbol,
-      state: currency.state,
-      name: currency.name,
-      symbol: currency.symbol,
-      icon: currency.icon,
-      rate: rateText ?? "",
-    });
+      dataSource.push({
+        key: currency.symbol,
+        state: currency.state,
+        name: currency.name,
+        symbol: currency.symbol,
+        icon: currency.icon,
+        rate: rateText ?? "",
+      });
+    }
   }
 
   const columns = [
