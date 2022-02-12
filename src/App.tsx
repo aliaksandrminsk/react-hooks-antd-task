@@ -14,7 +14,7 @@ const App = () => {
   return (
     <SettingsState>
       <BrowserRouter>
-        <Layout>
+        <Layout style={{ minHeight: "100vh", overflowX: "hidden" }}>
           <Header className="header">
             <MenuBar />
           </Header>

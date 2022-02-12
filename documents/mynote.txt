@@ -1,5 +1,5 @@
 1) gulp
 2) unit test
-3) <React.StrictMode>
-4) delete prettier from dep
+3) delete prettier from dep
+4) кантроль нагрузки
 
