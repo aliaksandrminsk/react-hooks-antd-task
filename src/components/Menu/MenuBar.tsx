@@ -18,13 +18,19 @@ export const MenuBar: React.FC = () => {
       selectedKeys={[location.pathname]}
     >
       <Menu.Item key="/converter" icon={<GoldOutlined />}>
-        <Link to="/converter">Сonverter</Link>
+        <Link data-testid="converter-link" to="/converter">
+          Сonverter
+        </Link>
       </Menu.Item>
       <Menu.Item key="/rates" icon={<AppstoreOutlined />}>
-        <Link to="/rates">All rates</Link>
+        <Link data-testid="rates-link" to="/rates">
+          All rates
+        </Link>
       </Menu.Item>
       <Menu.Item key="/settings" icon={<SettingOutlined />}>
-        <Link to="/settings">Settings</Link>
+        <Link data-testid="settings-link" to="/settings">
+          Settings
+        </Link>
       </Menu.Item>
     </Menu>
   );

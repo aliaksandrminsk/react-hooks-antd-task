@@ -10,29 +10,33 @@ import { MenuBar } from "./components/Menu/MenuBar";
 
 const { Header, Footer, Content } = Layout;
 
+export const LayoutComponent = () => (
+  <Layout style={{ minHeight: "100vh", overflowX: "hidden" }}>
+    <Header className="header">
+      <MenuBar />
+    </Header>
+
+    <Content>
+      <Routes>
+        <Route path="settings" element={<Settings />} />
+        <Route path="rates" element={<Rates />} />
+        <Route path="converter" element={<Converter />} />
+        <Route path="*" element={<Navigate to="/rates" />} />
+      </Routes>
+    </Content>
+    <Footer>
+      <Row gutter={0} style={{ float: "right" }}>
+        <Col xs={24}>© 1995-2022 Company.com Inc.</Col>
+      </Row>
+    </Footer>
+  </Layout>
+);
+
 const App = () => {
   return (
     <SettingsState>
       <BrowserRouter>
-        <Layout style={{ minHeight: "100vh", overflowX: "hidden" }}>
-          <Header className="header">
-            <MenuBar />
-          </Header>
-
-          <Content>
-            <Routes>
-              <Route path="settings" element={<Settings />} />
-              <Route path="rates" element={<Rates />} />
-              <Route path="converter" element={<Converter />} />
-              <Route path="*" element={<Navigate to="/rates" />} />
-            </Routes>
-          </Content>
-          <Footer>
-            <Row gutter={0} style={{ float: "right" }}>
-              <Col xs={24}>© 1995-2022 Company.com Inc.</Col>
-            </Row>
-          </Footer>
-        </Layout>
+        <LayoutComponent />
       </BrowserRouter>
     </SettingsState>
   );
