@@ -1,7 +1,7 @@
 # React-Hooks-Antd Example
 
 This project is a currency converter. It shows how to use React Hooks along with [TypeScript](https://www.typescriptlang.org/) language.
-The user interface is made by using Ant Design.  React Testing Library is used for testing React components.
+The user interface is made by using [Ant Design](https://ant.design/).  [React Testing Library](https://testing-library.com/) is used for testing React components.
 
 To run the package.
 

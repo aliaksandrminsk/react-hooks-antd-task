@@ -52,6 +52,7 @@ describe("Converter page", () => {
       );
     });
 
+    expect(axios.get).toHaveBeenCalledTimes(2);
     expect(await screen.getAllByText(/USD/i)).not.toBeNull();
 
     const comboboxs = screen.getAllByRole("combobox");

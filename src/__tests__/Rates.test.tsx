@@ -53,6 +53,7 @@ describe("Rates page", () => {
       );
     });
 
+    expect(axios.get).toHaveBeenCalledTimes(2);
     expect(await screen.getAllByText(/United States/i)).not.toBeNull();
     expect(await screen.getAllByText(/GBP/i)).not.toBeNull();
     expect(await screen.getAllByText(/Australia/i)).not.toBeNull();

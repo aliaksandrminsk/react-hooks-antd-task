@@ -49,6 +49,8 @@ describe("useReducer", () => {
       return render(<SettingsState children={<Settings />} />);
     });
 
+    expect(axios.get).toHaveBeenCalledTimes(1);
+
     expect(screen.getByLabelText(/United States dollar/i)).toBeChecked();
     expect(screen.getByLabelText(/Australian dollar/i)).not.toBeChecked();
 
