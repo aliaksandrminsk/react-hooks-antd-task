@@ -14,19 +14,6 @@ export const SettingsState: React.FC = ({ children }) => {
 
   const [state, dispatch] = useReducer(settingsReducer, initialState);
 
-  const initSettings = () => {
-    axios.get("currencies.json").then((response) => {
-      const currencies = response.data.currencies;
-      const defaultCurrency = response.data.defaultCurrency;
-
-      dispatch({
-        type: ActionType.SET_SETTINGS,
-        currencies,
-        defaultCurrency,
-      });
-    });
-  };
-
   const setDefaultCurrency = (defaultCurrency: string) => {
     dispatch({
       type: ActionType.SET_DEFAULT_CURRENCY,
@@ -89,7 +76,21 @@ export const SettingsState: React.FC = ({ children }) => {
   };
 
   useEffect(() => {
-    initSettings();
+    axios
+      .get("currencies.json")
+      .then((response) => {
+        const currencies = response.data.currencies;
+        const defaultCurrency = response.data.defaultCurrency;
+
+        dispatch({
+          type: ActionType.SET_SETTINGS,
+          currencies,
+          defaultCurrency,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
 
   const { currencies, defaultCurrency, isSettingsJsonLoaded } = state;
