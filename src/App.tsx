@@ -7,12 +7,13 @@ import { Rates } from "./pages/Rates/Rates";
 import { Converter } from "./pages/Converter/Converter";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { MenuBar } from "./components/Menu/MenuBar";
+import classes from "./App.module.css";
 
 const { Header, Footer, Content } = Layout;
 
 export const LayoutComponent = () => (
-  <Layout style={{ minHeight: "100vh", overflowX: "hidden" }}>
-    <Header className="header">
+  <Layout className={classes.layout}>
+    <Header className={classes.header}>
       <MenuBar />
     </Header>
 
@@ -25,7 +26,7 @@ export const LayoutComponent = () => (
       </Routes>
     </Content>
     <Footer>
-      <Row gutter={0} style={{ float: "right" }}>
+      <Row gutter={0} className={classes.row}>
         <Col xs={24}>© 1995-2022 Company.com Inc.</Col>
       </Row>
     </Footer>
