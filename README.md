@@ -14,9 +14,6 @@ npm run start
 To run tests.
 
 ```
-git clone https://github.com/aliaksandrminsk/react-hooks-antd-task.git
-cd react-hooks-antd-task
-npm install
 npm run test
 ```
 
