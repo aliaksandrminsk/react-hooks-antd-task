@@ -7,7 +7,7 @@ import { LayoutComponent } from "../App";
 const renderWithRouter = (ui: ReactElement, { route = "/" } = {}) => {
   return render(
     <MemoryRouter initialEntries={[route]} initialIndex={0}>
-      <LayoutComponent />
+      {ui}
     </MemoryRouter>
   );
 };
